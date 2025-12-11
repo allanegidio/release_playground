@@ -10,7 +10,8 @@ defmodule ReleasePlayground.Application do
     children = [
       ReleasePlaygroundWeb.Telemetry,
       ReleasePlayground.Repo,
-      {DNSCluster, query: Application.get_env(:release_playground, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:release_playground, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ReleasePlayground.PubSub},
       # Start a worker by calling: ReleasePlayground.Worker.start_link(arg)
       # {ReleasePlayground.Worker, arg},

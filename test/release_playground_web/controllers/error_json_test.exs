@@ -2,7 +2,9 @@ defmodule ReleasePlaygroundWeb.ErrorJSONTest do
   use ReleasePlaygroundWeb.ConnCase, async: true
 
   test "renders 404" do
-    assert ReleasePlaygroundWeb.ErrorJSON.render("404.json", %{}) == %{errors: %{detail: "Not Found"}}
+    assert ReleasePlaygroundWeb.ErrorJSON.render("404.json", %{}) == %{
+             errors: %{detail: "Not Found"}
+           }
   end
 
   test "renders 500" do
