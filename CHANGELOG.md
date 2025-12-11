@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.8.0](https://https://github.com/allanegidio/release_playground/compare/v0.7.0...v0.8.0) (2025-12-11)
+
+
+
+
+### Features:
+
+* orders: Improve text
+
+### Bug Fixes:
+
+* orders: Fix text
+
 ## [v0.7.0](https://https://github.com/allanegidio/release_playground/compare/v0.6.0...v0.7.0) (2025-12-11)
 
 
