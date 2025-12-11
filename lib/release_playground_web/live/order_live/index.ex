@@ -11,7 +11,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Index do
         Listing Orders Improved
         <:actions>
           <.button variant="primary" navigate={~p"/orders/new"}>
-            <.icon name="hero-plus" /> New Order with Break change
+            <.icon name="hero-plus" /> New Order featue
           </.button>
         </:actions>
       </.header>
