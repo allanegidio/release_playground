@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.2.0](https://https://github.com/allanegidio/release_playground/compare/v0.1.0...v0.2.0) (2025-12-11)
+
+
+
+
+### Features:
+
+* orders: add orders
+
+### Bug Fixes:
+
+* orders: Fix test
+
 ## [v0.1.0](https://https://github.com/allanegidio/release_playground/compare/v0.1.0...v0.1.0) (2025-12-11)
 
 
