@@ -4,8 +4,18 @@ defmodule ReleasePlaygroundWeb.OrderLiveTest do
   import Phoenix.LiveViewTest
   import ReleasePlayground.OrdersFixtures
 
-  @create_attrs %{address: "some address", total_price: 42, total_quantity: 42, phone_number: "some phone_number"}
-  @update_attrs %{address: "some updated address", total_price: 43, total_quantity: 43, phone_number: "some updated phone_number"}
+  @create_attrs %{
+    address: "some address",
+    total_price: 42,
+    total_quantity: 42,
+    phone_number: "some phone_number"
+  }
+  @update_attrs %{
+    address: "some updated address",
+    total_price: 43,
+    total_quantity: 43,
+    phone_number: "some updated phone_number"
+  }
   @invalid_attrs %{address: nil, total_price: nil, total_quantity: nil, phone_number: nil}
   defp create_order(_) do
     order = order_fixture()

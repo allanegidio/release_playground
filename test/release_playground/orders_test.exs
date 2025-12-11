@@ -21,7 +21,12 @@ defmodule ReleasePlayground.OrdersTest do
     end
 
     test "create_order/1 with valid data creates a order" do
-      valid_attrs = %{address: "some address", total_price: 42, total_quantity: 42, phone_number: "some phone_number"}
+      valid_attrs = %{
+        address: "some address",
+        total_price: 42,
+        total_quantity: 42,
+        phone_number: "some phone_number"
+      }
 
       assert {:ok, %Order{} = order} = Orders.create_order(valid_attrs)
       assert order.address == "some address"
@@ -36,7 +41,13 @@ defmodule ReleasePlayground.OrdersTest do
 
     test "update_order/2 with valid data updates the order" do
       order = order_fixture()
-      update_attrs = %{address: "some updated address", total_price: 43, total_quantity: 43, phone_number: "some updated phone_number"}
+
+      update_attrs = %{
+        address: "some updated address",
+        total_price: 43,
+        total_quantity: 43,
+        phone_number: "some updated phone_number"
+      }
 
       assert {:ok, %Order{} = order} = Orders.update_order(order, update_attrs)
       assert order.address == "some updated address"
