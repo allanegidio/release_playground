@@ -16,20 +16,6 @@ runs:
         elixir-version: "1.19.4"
         otp-version: "28.3"
 
-    # - name: Restore dependencies cache
-    #   uses: actions/cache@v4
-    #   with:
-    #     path: deps
-    #     key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-    #     restore-keys: ${{ runner.os }}-mix-
-
-    # - name: Restore build cache
-    #   uses: actions/cache@v4
-    #   with:
-    #     path: _build
-    #     key: ${{ runner.os }}-build-elixir
-    #     restore-keys: ${{ runner.os }}-build-elixir
-
     - name: build
       run: |
         mix deps.get
