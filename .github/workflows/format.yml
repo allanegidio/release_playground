@@ -10,15 +10,9 @@ on:
       - main
       - develop
 
-# concurrency:
-#   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-#   cancel-in-progress: true
-
 jobs:
   formatting:
     runs-on: ubuntu-latest
-    env:
-      ImageOS: ubuntu22
     name: formatting
     steps:
       - uses: actions/checkout@v4
