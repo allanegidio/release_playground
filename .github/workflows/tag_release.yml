@@ -30,10 +30,4 @@ jobs:
         run: git push --follow-tags
 
       - name: Create Release with auto notes
-        uses: softprops/action-gh-release@v1
-        with:
-          # If git_ops outputs the tag, you can detect it; otherwise,
-          # set it explicitly if known, or let the action use the latest tag.
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
