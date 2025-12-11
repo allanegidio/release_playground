@@ -5,6 +5,11 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.10.5](https://https://github.com/allanegidio/release_playground/compare/v0.10.4...v0.10.5) (2025-12-11)
+
+
+
+
 ## [v0.10.4](https://https://github.com/allanegidio/release_playground/compare/v0.10.3...v0.10.4) (2025-12-11)
 
 
