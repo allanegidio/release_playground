@@ -1,0 +1,32 @@
+name: Check Format Elixir Code
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+
+# concurrency:
+#   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+#   cancel-in-progress: true
+
+jobs:
+  formatting:
+    runs-on: self-hosted
+    env:
+      ImageOS: ubuntu22
+    name: formatting
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Elixir/Erlang Environment and checkout code
+        uses: ./.github/actions
+
+      - name: Check formatting
+        run: mix format --check-formatted
