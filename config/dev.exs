@@ -91,15 +91,6 @@ config :phoenix_live_view,
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
 
-# Configure your database
-config :release_playground, ReleasePlayground.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "release_playground_dev",
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
