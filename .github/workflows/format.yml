@@ -16,7 +16,7 @@ on:
 
 jobs:
   formatting:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       ImageOS: ubuntu22
     name: formatting
