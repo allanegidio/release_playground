@@ -5,6 +5,17 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.1.0](https://https://github.com/allanegidio/release_playground/compare/v1.0.0...v1.1.0) (2025-12-11)
+
+
+
+
+### Features:
+
+* ci: Update version of github app token (#12)
+
+* ci: Remove release YML (#11)
+
 ## [v1.0.0](https://https://github.com/allanegidio/release_playground/compare/v0.10.5...v1.0.0) (2025-12-11)
 ### Breaking Changes:
 
