@@ -5,6 +5,9 @@ on:
     tags:
       - "v*"
 
+permissions:
+  contents: write
+
 jobs:
   tagged-release:
     name: Tagged Release
@@ -12,27 +15,44 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Get release body
         run: echo "$(sed '1,/## \['${{ github.ref_name }}'\]/d;/## \[v.*\]/Q' CHANGELOG.md)" > ${HOME}/changelog-body.txt
 
       - name: Create Release Notes
-        uses: actions/github-script@v4.0.2
+        uses: actions/github-script@v7
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs')
+            const core = require('@actions/core');
+            const fs = require('fs');
+            const { context, github } = require('@actions/github');
 
-            let body = fs.readFileSync(`${process.env.HOME}/changelog-body.txt`, {encoding: 'utf8'})
+            const tagName = context.ref.replace('refs/tags/', '');
+            const body = fs.readFileSync(`${process.env.HOME}/changelog-body.txt`, { encoding: 'utf8' });
 
-            await github.request(`POST /repos/${{ github.repository }}/releases`, {
-              name: "${{ github.ref_name }}",
-              tag_name: "${{ github.ref }}",
-              body: body
+            const res = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: tagName,
+              name: tagName,
+              body,
             });
+            
+            core.info(`Created release: ${res.data.html_url}`);
 
       - name: Create release branch
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
-          git checkout ${{ github.ref }}
-          git checkout -b release/${{ github.ref_name }}
-          git push -u origin release/${{ github.ref_name }}
+          set -euo pipefail
+          TAG_NAME="${GITHUB_REF_NAME}"
+          git fetch --tags --force
+          git checkout -b "release/${TAG_NAME}" "${GITHUB_SHA}"
+          # Authenticate push to avoid permission issues
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
+          git push -u origin "release/${TAG_NAME}"
