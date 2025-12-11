@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.10.1](https://https://github.com/allanegidio/release_playground/compare/v0.10.0...v0.10.1) (2025-12-11)
+
+
+
+
+### Bug Fixes:
+
+* orders: Test maroto
+
 ## [v0.10.0](https://https://github.com/allanegidio/release_playground/compare/v0.9.2...v0.10.0) (2025-12-11)
 
 
