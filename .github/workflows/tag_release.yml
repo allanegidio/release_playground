@@ -29,7 +29,7 @@ jobs:
           git config --local user.name "GitHub Action"
 
       - name: Release
-        run: mix git_ops.release --yes
+        run: mix git_ops.release --yes --force-patch
 
       - name: Push Tag
         run: git push --follow-tags
