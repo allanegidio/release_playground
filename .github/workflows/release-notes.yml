@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Get release body
+        run: echo "$(sed '1,/## \['${{ github.ref_name }}'\]/d;/## \[v.*\]/Q' CHANGELOG.md)" > ${HOME}/changelog-body.txt
+
       - name: Create Release Notes
         uses: actions/github-script@v4.0.2
         with:
