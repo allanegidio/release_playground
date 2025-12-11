@@ -18,6 +18,11 @@ defmodule ReleasePlaygroundWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/orders", OrderLive.Index, :index
+    live "/orders/new", OrderLive.Form, :new
+    live "/orders/:id", OrderLive.Show, :show
+    live "/orders/:id/edit", OrderLive.Form, :edit
   end
 
   # Other scopes may use custom stacks.
