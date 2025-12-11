@@ -27,7 +27,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            const { context, github } = require('@actions/github');
 
             const tagName = context.ref.replace('refs/tags/', '');
             const body = fs.readFileSync(`${process.env.HOME}/changelog-body.txt`, { encoding: 'utf8' });
@@ -39,6 +38,8 @@ jobs:
               name: tagName,
               body,
             });
+            
+            core.info(`Created release: ${res.data.html_url}`);
 
       - name: Create release branch
         shell: bash
