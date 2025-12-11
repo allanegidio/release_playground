@@ -27,11 +27,11 @@ runs:
       uses: actions/cache@v4
       with:
         path: _build
-        key: ${{ runner.os }}-build-elixir-${{ inputs.mix-env }}
-        restore-keys: ${{ runner.os }}-build-elixir-${{ inputs.mix-env }}
+        key: ${{ runner.os }}-build-elixir
+        restore-keys: ${{ runner.os }}-build-elixir
 
     - name: build
       run: |
-        mix deps.get --only ${{ inputs.mix-env }}
+        mix deps.get --only
         mix compile --warnings-as-errors
       shell: bash

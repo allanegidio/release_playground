@@ -25,8 +25,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Elixir/Erlang Environment and checkout code
-        uses: ./.github/actions
+      - name: Setup Elixir/Erlang Environment
+        uses: ./.github/actions/setup
 
       - name: Check formatting
         run: mix format --check-formatted
