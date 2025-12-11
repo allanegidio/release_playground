@@ -14,7 +14,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Index do
             <.icon name="hero-plus" /> New Order featue
           </.button>
         </:actions>
-        KKKKK
+        KKKKK break pls
       </.header>
 
       <.table
