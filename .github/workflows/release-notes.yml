@@ -1,9 +1,9 @@
 name: Release Notes
 
 on:
-  workflow_run:
-    workflows: ["Tag Release"]
-    types: ["completed"]
+  push:
+    tags:
+      - "v*"
 
 permissions:
   contents: write
