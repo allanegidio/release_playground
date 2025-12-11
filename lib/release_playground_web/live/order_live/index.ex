@@ -8,7 +8,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Index do
     ~H"""
     <Layouts.app flash={@flash}>
       <.header>
-        Listing Orders Improved
+        Listing Orders Fixed
         <:actions>
           <.button variant="primary" navigate={~p"/orders/new"}>
             <.icon name="hero-plus" /> New Order with Break change
