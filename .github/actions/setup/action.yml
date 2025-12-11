@@ -9,6 +9,7 @@ runs:
       with:
         elixir-version: "1.19.4"
         otp-version: "28.3"
+        install-hex: true
 
     - name: build
       run: |
