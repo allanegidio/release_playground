@@ -1,0 +1,27 @@
+name: Tag Release
+
+on: workflow_dispatch
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.TAG_PUSH_TOKEN }}
+
+      - name: Setup Elixir/Erlang Environment
+        uses: ./.github/actions/setup
+
+      - name: Git config
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Release
+        run: mix git_ops.release --yes
+
+      - name: Push Tag
+        run: git push --follow-tags
