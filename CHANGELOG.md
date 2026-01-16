@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.2.0](https://https://github.com/allanegidio/release_playground/compare/v1.1.0...v1.2.0) (2026-01-16)
+
+
+
+
+### Features:
+
+* Test feat (#13)
+
+### Bug Fixes:
+
+* Fix test (#14)
+
 ## [v1.1.0](https://https://github.com/allanegidio/release_playground/compare/v1.0.0...v1.1.0) (2025-12-11)
 
 
