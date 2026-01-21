@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.5.1](https://https://github.com/allanegidio/release_playground/compare/v1.5.0...v1.5.1) (2026-01-21)
+
+
+
+
+### Bug Fixes:
+
+* ci: skip tag release when action@github.com pushes a commit
+
 ## [v1.5.0](https://https://github.com/allanegidio/release_playground/compare/v1.4.2...v1.5.0) (2026-01-21)
 
 
