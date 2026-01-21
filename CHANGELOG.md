@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.4.0](https://https://github.com/allanegidio/release_playground/compare/v1.3.0...v1.4.0) (2026-01-21)
+
+
+
+
+### Features:
+
+* ci: Tag release ignore tags during pushing. (#18)
+
 ## [v1.3.0](https://https://github.com/allanegidio/release_playground/compare/v1.2.0...v1.3.0) (2026-01-21)
 
 
