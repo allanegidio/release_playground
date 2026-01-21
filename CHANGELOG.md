@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.4.1](https://https://github.com/allanegidio/release_playground/compare/v1.4.0...v1.4.1) (2026-01-21)
+
+
+
+
+### Bug Fixes:
+
+* ci: Another try to not release when push tag (#20)
+
 ## [v1.4.0](https://https://github.com/allanegidio/release_playground/compare/v1.3.0...v1.4.0) (2026-01-21)
 
 
