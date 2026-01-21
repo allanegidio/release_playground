@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.3.0](https://https://github.com/allanegidio/release_playground/compare/v1.2.0...v1.3.0) (2026-01-21)
+
+
+
+
+### Features:
+
+* ci: Generate tag release during push on main branch (#16)
+
 ## [v1.2.0](https://https://github.com/allanegidio/release_playground/compare/v1.1.0...v1.2.0) (2026-01-16)
 
 
