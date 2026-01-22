@@ -11,7 +11,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Index do
         Listing Orders Fixed
         <:actions>
           <.button variant="primary" navigate={~p"/orders/new"}>
-            <.icon name="hero-plus" /> New Order fe
+            <.icon name="hero-plus" /> New Order feasdasdsadasds
           </.button>
         </:actions>
         KKKKK break pls
