@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.7.0](https://https://github.com/allanegidio/release_playground/compare/v1.6.0...v1.7.0) (2026-01-22)
+
+
+
+
+### Features:
+
+* one mroe test (#27)
+
 ## [v1.6.0](https://https://github.com/allanegidio/release_playground/compare/v1.5.2...v1.6.0) (2026-01-22)
 
 
