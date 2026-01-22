@@ -5,6 +5,35 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.5.2](https://https://github.com/allanegidio/release_playground/compare/v1.5.1...v1.5.2) (2026-01-21)
+
+
+
+
+### Bug Fixes:
+
+* ci: using commit message to ignore
+
+* ci: add when push tags ignore tag release GH
+
+## [v1.5.1](https://https://github.com/allanegidio/release_playground/compare/v1.5.0...v1.5.1) (2026-01-21)
+
+
+
+
+### Bug Fixes:
+
+* ci: skip tag release when action@github.com pushes a commit
+
+## [v1.5.0](https://https://github.com/allanegidio/release_playground/compare/v1.4.2...v1.5.0) (2026-01-21)
+
+
+
+
+### Features:
+
+* ci: one more test
+
 ## [v1.4.2](https://https://github.com/allanegidio/release_playground/compare/v1.4.1...v1.4.2) (2026-01-21)
 
 

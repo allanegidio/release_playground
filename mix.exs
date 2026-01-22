@@ -1,7 +1,7 @@
 defmodule ReleasePlayground.MixProject do
   use Mix.Project
 
-  @version "1.4.2"
+  @version "1.5.2"
 
   def project do
     [
