@@ -5,6 +5,21 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.10.0](https://https://github.com/allanegidio/release_playground/compare/v1.9.0...v1.10.0) (2026-01-23)
+
+
+
+
+### Features:
+
+* testing tag release sending commit to develop
+
+### Bug Fixes:
+
+* Testing without origin/main
+
+* cool fix
+
 ## [v1.9.0](https://https://github.com/allanegidio/release_playground/compare/v1.8.0...v1.9.0) (2026-01-23)
 
 
