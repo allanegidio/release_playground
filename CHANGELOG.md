@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.8.0](https://https://github.com/allanegidio/release_playground/compare/v1.7.0...v1.8.0) (2026-01-23)
+
+
+
+
+### Features:
+
+* ci: playing with ff
+
 ## [v1.7.0](https://https://github.com/allanegidio/release_playground/compare/v1.6.0...v1.7.0) (2026-01-22)
 
 
