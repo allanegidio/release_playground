@@ -1,9 +1,9 @@
 name: pull-request
 on:
   pull_request:
+    types: [opened, reopened, synchronize]
     branches:
       - main
-    types: [opened, reopened, synchronize]
 jobs:
   check-fast-forward:
     if: ${{ github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'develop' }}
