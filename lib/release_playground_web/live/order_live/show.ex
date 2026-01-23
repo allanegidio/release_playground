@@ -9,7 +9,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Show do
     <Layouts.app flash={@flash}>
       <.header>
         Order {@order.id}
-        <:subtitle>This is a order record from your database.</:subtitle>
+        <:subtitle>This is a order record from your databas NOICE e.</:subtitle>
         <:actions>
           <.button navigate={~p"/orders"}>
             <.icon name="hero-arrow-left" />
