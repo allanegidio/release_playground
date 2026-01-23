@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.11.3](https://https://github.com/allanegidio/release_playground/compare/v1.11.2...v1.11.3) (2026-01-23)
+
+
+
+
+### Bug Fixes:
+
+* testing Nathan idea
+
 ## [v1.11.2](https://https://github.com/allanegidio/release_playground/compare/v1.11.1...v1.11.2) (2026-01-23)
 
 
