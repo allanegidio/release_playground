@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.11.6](https://https://github.com/allanegidio/release_playground/compare/v1.11.5...v1.11.6) (2026-01-23)
+
+
+
+
+### Bug Fixes:
+
+* testing to check pull request only when is develop -> main
+
 ## [v1.11.5](https://https://github.com/allanegidio/release_playground/compare/v1.11.4...v1.11.5) (2026-01-23)
 
 
