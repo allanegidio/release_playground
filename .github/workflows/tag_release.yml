@@ -49,3 +49,9 @@ jobs:
           RELEASE_SHA=$(git rev-parse HEAD)
 
           echo "Release commit SHA: $RELEASE_SHA"
+          
+          # Checkout develop branch
+          git checkout develop
+          
+          # Merge the release commit into develop
+          git cherry-pick $RELEASE_SHA
