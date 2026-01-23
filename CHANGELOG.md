@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.11.4](https://https://github.com/allanegidio/release_playground/compare/v1.11.3...v1.11.4) (2026-01-23)
+
+
+
+
+### Bug Fixes:
+
+* prefer ff-only instead
+
 ## [v1.11.3](https://https://github.com/allanegidio/release_playground/compare/v1.11.2...v1.11.3) (2026-01-23)
 
 
