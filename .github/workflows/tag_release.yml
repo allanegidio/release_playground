@@ -42,5 +42,10 @@ jobs:
       - name: Push Tag on Main
         run: git push --follow-tags
 
-      - name: Push commit on Develop
-        run: git push origin/develop
+      - name: Merge release commit into develop
+        shell: bash
+        run: |
+          # Capture the release commit SHA created by git_ops.release
+          RELEASE_SHA=$(git rev-parse HEAD)
+
+          echo "Release commit SHA: $RELEASE_SHA"
