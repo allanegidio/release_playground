@@ -50,6 +50,7 @@ jobs:
 
           if ! git merge --ff-only origin/main; then
             echo "::error::Fast-forward failed - develop has diverged. Manual sync required."
+            
             exit 1
           fi
           
