@@ -42,19 +42,29 @@ jobs:
       - name: Push Tag on Main
         run: git push --follow-tags
 
-      - name: Merge release commit into develop
-        shell: bash
-        run: |
-          # Capture the release commit SHA created by git_ops.release
-          RELEASE_SHA=$(git rev-parse HEAD)
+      # - name: Merge release commit into develop
+      #   shell: bash
+      #   run: |
+      #     # Capture the release commit SHA created by git_ops.release
+      #     RELEASE_SHA=$(git rev-parse HEAD)
 
-          echo "Release commit SHA: $RELEASE_SHA"
+      #     echo "Release commit SHA: $RELEASE_SHA"
           
-          # Checkout develop branch
+      #     # Checkout develop branch
+      #     git checkout develop
+          
+      #     # Merge the release commit, preferring the release version for conflicts
+      #     git merge $RELEASE_SHA -X theirs --no-edit
+          
+      #     # Push develop branch
+      #     git push origin develop
+
+      - name: Sync release commit back to develop
+        run: |
+          git fetch origin
           git checkout develop
-          
-          # Merge the release commit, preferring the release version for conflicts
-          git merge $RELEASE_SHA -X theirs --no-edit
-          
-          # Push develop branch
+          if ! git merge --ff-only origin/main; then
+            echo "::error::Fast-forward failed - develop has diverged. Manual sync required."
+            exit 1
+          fi
           git push origin develop
