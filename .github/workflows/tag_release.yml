@@ -53,5 +53,8 @@ jobs:
           # Checkout develop branch
           git checkout develop
           
-          # Merge the release commit into develop
-          git cherry-pick $RELEASE_SHA
+          # Merge the release commit, preferring the release version for conflicts
+          git merge $RELEASE_SHA -X theirs --no-edit
+          
+          # Push develop branch
+          git push origin develop
