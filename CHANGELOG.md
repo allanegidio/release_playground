@@ -5,6 +5,31 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.9.0](https://https://github.com/allanegidio/release_playground/compare/v1.8.0...v1.9.0) (2026-01-23)
+
+
+
+
+### Features:
+
+* cool feature
+
+* improve text with power
+
+* nice new text (#29)
+
+### Bug Fixes:
+
+* mix format
+
+* cool fix
+
+* use git hub app to generate token
+
+* mix format
+
+* improve text
+
 ## [v1.8.0](https://https://github.com/allanegidio/release_playground/compare/v1.7.0...v1.8.0) (2026-01-23)
 
 
