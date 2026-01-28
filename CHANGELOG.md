@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.13.0](https://https://github.com/allanegidio/release_playground/compare/v1.12.3...v1.13.0) (2026-01-28)
+
+
+
+
+### Features:
+
+* ci: Add deploy files
+
 ## [v1.12.3](https://https://github.com/allanegidio/release_playground/compare/v1.12.2...v1.12.3) (2026-01-28)
 
 
