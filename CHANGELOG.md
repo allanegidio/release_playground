@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.15.1](https://https://github.com/allanegidio/release_playground/compare/v1.15.0...v1.15.1) (2026-01-28)
+
+
+
+
+### Bug Fixes:
+
+* improve text and test role branch (#47)
+
 ## [v1.15.0](https://https://github.com/allanegidio/release_playground/compare/v1.14.0...v1.15.0) (2026-01-28)
 
 
