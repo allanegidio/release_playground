@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.17.0](https://https://github.com/allanegidio/release_playground/compare/v1.16.0...v1.17.0) (2026-01-28)
+
+
+
+
+### Features:
+
+* add github app token to release notes (#51)
+
 ## [v1.16.0](https://https://github.com/allanegidio/release_playground/compare/v1.15.1...v1.16.0) (2026-01-28)
 
 
