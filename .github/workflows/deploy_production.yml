@@ -1,8 +1,8 @@
-name: Fly Staging Deploy
+name: Fly Production Deploy
 on:
   push:
     branches:
-      - main
+      - "release/v*"
 jobs:
   deploy-web:
     name: Deploy production web
