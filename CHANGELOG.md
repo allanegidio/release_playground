@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.13.1](https://https://github.com/allanegidio/release_playground/compare/v1.13.0...v1.13.1) (2026-01-28)
+
+
+
+
+### Bug Fixes:
+
+* more tests about protection rules (#39)
+
 ## [v1.13.0](https://https://github.com/allanegidio/release_playground/compare/v1.12.3...v1.13.0) (2026-01-28)
 
 
