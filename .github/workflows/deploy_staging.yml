@@ -1,0 +1,12 @@
+name: Fly Staging Deploy
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  deploy-web:
+    name: Deploy staging web
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to staging..."
+
