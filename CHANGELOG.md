@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.12.3](https://https://github.com/allanegidio/release_playground/compare/v1.12.2...v1.12.3) (2026-01-28)
+
+
+
+
+### Bug Fixes:
+
+* ci: remove fun from pushes
+
 ## [v1.12.2](https://https://github.com/allanegidio/release_playground/compare/v1.12.1...v1.12.2) (2026-01-23)
 
 
