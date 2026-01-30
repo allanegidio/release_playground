@@ -13,7 +13,6 @@ permissions:
 jobs:
   tag:
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, 'chore: release version')"
 
     steps:
       - name: Generate GitHub App Token
@@ -41,17 +40,3 @@ jobs:
 
       - name: Push Tag on Main
         run: git push --follow-tags
-
-      - name: Sync release commit back to develop
-        run: |
-          git fetch origin
-
-          git checkout develop
-
-          if ! git merge --ff-only origin/main; then
-            echo "::error::Fast-forward failed - develop has diverged. Manual sync required."
-            
-            exit 1
-          fi
-          
-          git push origin develop

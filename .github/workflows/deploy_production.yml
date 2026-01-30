@@ -2,7 +2,7 @@ name: Fly Production Deploy
 on:
   push:
     branches:
-      - "release/v*"
+      - main
 jobs:
   deploy-web:
     name: Deploy production web
