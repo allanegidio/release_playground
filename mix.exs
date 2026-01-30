@@ -1,12 +1,10 @@
 defmodule ReleasePlayground.MixProject do
   use Mix.Project
 
-  @version "1.18.0"
-
   def project do
     [
       app: :release_playground,
-      version: @version,
+      version: "2.0.0",
       elixir: "~> 1.15",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
