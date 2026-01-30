@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v1.18.0](https://https://github.com/allanegidio/release_playground/compare/v1.17.3...v1.18.0) (2026-01-30)
+
+
+
+
+### Features:
+
+* update to not use fast-forward and just rebase
+
 ## [v1.17.3](https://https://github.com/allanegidio/release_playground/compare/v1.17.2...v1.17.3) (2026-01-28)
 
 
