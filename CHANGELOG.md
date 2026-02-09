@@ -2,6 +2,15 @@
 
 <!-- changelog -->
 
+## [v2.0.1](https://https://github.com/allanegidio/release_playground/compare/v2.0.0...v2.0.1) (2026-02-09)
+
+
+
+
+### Bug Fixes:
+
+* tag release
+
 ## [v2.1.0](https://https://github.com/allanegidio/release_playground/compare/v2.0.0...v2.1.0) (2026-02-09)
 
 
