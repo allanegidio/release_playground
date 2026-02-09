@@ -13,6 +13,7 @@ permissions:
 jobs:
   tag:
     runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, 'chore: release version')"
 
     steps:
       - name: Generate GitHub App Token
@@ -40,7 +41,7 @@ jobs:
 
       - name: Push changes and tags
         run: |
-          git push origin main --tags
+          git push --follow-tags
 
       - name: Cherry-pick release commit to develop
         run: |
