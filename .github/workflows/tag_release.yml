@@ -13,6 +13,7 @@ permissions:
 jobs:
   tag:
     runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, 'chore: release version')"
 
     steps:
       - name: Generate GitHub App Token
@@ -38,5 +39,31 @@ jobs:
       - name: Release
         run: mix git_ops.release --yes
 
-      - name: Push Tag on Main
-        run: git push --follow-tags
+      - name: Push changes and tags
+        run: |
+          git push --follow-tags
+
+      - name: Cherry-pick release commit to develop
+        run: |
+          # Get the current commit (the release commit)
+          RELEASE_COMMIT=$(git rev-parse HEAD)
+          
+          # Fetch and checkout develop
+          git fetch origin develop
+          git checkout develop
+          
+          # Cherry-pick the release commit
+          if git cherry-pick $RELEASE_COMMIT; then
+            echo "Successfully cherry-picked release commit to develop"
+            git push origin develop
+          else
+            echo " had conflicts. Attempting to resolve..."
+            
+            # Accept all changes from the release commit
+            git checkout --theirs mix.exs CHANGELOG.md
+            git add mix.exs CHANGELOG.md
+            
+            # Complete the cherry-pick
+            git cherry-pick --continue || true
+            git push origin develop
+          fi

@@ -93,10 +93,10 @@ config :swoosh, :api_client, false
 
 config :git_ops,
   mix_project: Mix.Project.get!(),
-  changelog_file: "CHANGELOG.md",
+  changelog_file: nil,
   repository_url: "https://https://github.com/allanegidio/release_playground",
   types: [],
   tags: [],
-  manage_mix_version?: true,
+  manage_mix_version?: false,
   manage_readme_version: "README.md",
   version_tag_prefix: "v"
