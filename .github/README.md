@@ -40,7 +40,7 @@ Label your PRs to categorize changes in release notes:
 ### 1. Label Your PR
 When creating a PR, add one label:
 - `feature` for new features
-- `bug` or `hotfix` for bug fixes  
+- `bug` or `hotfix` or `fix` for bug fixes  
 - `docs` for documentation changes
 - `chore` for maintenance
 
