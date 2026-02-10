@@ -1,55 +1,21 @@
----
-name: Pull Request
-about: Create a pull request to contribute changes
-title: ''
-labels: ''
-assignees: ''
----
+## Describe your changes
 
-## 📝 Description
-<!-- Provide a clear and concise description of what this PR does -->
+## Visual changes 📸
 
-## 🎯 Type of Change
-<!-- Mark the relevant option with an "x" -->
-- [ ] 🚀 New feature (non-breaking change which adds functionality)
-- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 📚 Documentation update
-- [ ] 🔧 Maintenance/Refactoring
-- [ ] 🎨 UI/UX improvement
-- [ ] ⚡ Performance improvement
-- [ ] 🔒 Security fix
-- [ ] 🧪 Test updates
+## Stacking 📚
 
-## 🔗 Related Issues
-<!-- Link any related issues here -->
-Closes #
-Relates to #
+<!-- If this PR is stacked, uncomment the 2 lines below and add branch information -->
+<!-- This PR is stacked: -->
+<!-- parent branch: <link to parent branch> -->
+<!-- If this PR is not stacked, uncomment the line below -->
+<!-- This PR is not stacked -->
 
-## ✨ What's Changed
-<!-- List the main changes in this PR -->
-- 
-- 
-- 
-
-## 🧪 How to Test
-<!-- Describe how reviewers can test this change -->
-1. 
-2. 
-3. 
-
-## 📸 Screenshots (if applicable)
-<!-- Add screenshots or GIFs to show UI changes -->
-
-## ✅ Checklist
-- [ ] My code follows the project's style guidelines
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published
-
-## 📌 Additional Notes
-<!-- Any additional information that reviewers should know -->
+## Checklist before requesting a review
+- [ ] I have performed a self-review of my code
+- [ ] Module and function documentation is present with correct examples and parameters
+- [ ] Tests have been added/updated and they pass
+- [ ] Guard clauses and/or pattern matching is used for all public functions within context modules
+- [ ] If a resource is being mutated, I ensured the current user has permission to mutate it
+- [ ] Is Oban used? If so, I have ran the job locally and it worked as intended (not only using tests)
+- [ ] Credo and mix format have been ran
+- [ ] I have tested all functionality added/updated manually on my local machine

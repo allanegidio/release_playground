@@ -27,6 +27,11 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.generate-token.outputs.token }}
 
+      - name: Git config
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
       - name: Get previous tag
         id: previous_tag
         run: |
