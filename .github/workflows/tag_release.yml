@@ -13,7 +13,6 @@ permissions:
 jobs:
   tag:
     runs-on: ubuntu-latest
-    if: "!startsWith(github.event.head_commit.message, 'chore: release version')"
 
     steps:
       - name: Generate GitHub App Token
@@ -35,8 +34,8 @@ jobs:
 
       - name: Create timestamp tag
         run: |
-          TAG_NAME="v$(date -u +'%Y%m%d-%H%M%S')"
-          
+          TAG_NAME="v$(date -u +'%Y%m%d')"
+
           echo "Creating tag: $TAG_NAME"
 
           git tag -a "$TAG_NAME" -m "Release $TAG_NAME"
