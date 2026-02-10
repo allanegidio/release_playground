@@ -28,42 +28,17 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.generate-token.outputs.token }}
 
-      - name: Setup Elixir/Erlang Environment
-        uses: ./.github/actions/setup
-
       - name: Git config
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-      - name: Release
-        run: mix git_ops.release --yes
-
-      - name: Push changes and tags
+      - name: Create timestamp tag
         run: |
-          git push --follow-tags
+          TAG_NAME="v$(date -u +'%Y%m%d-%H%M%S')"
+          
+          echo "Creating tag: $TAG_NAME"
 
-      - name: Cherry-pick release commit to develop
-        run: |
-          # Get the current commit (the release commit)
-          RELEASE_COMMIT=$(git rev-parse HEAD)
-          
-          # Fetch and checkout develop
-          git fetch origin develop
-          git checkout develop
-          
-          # Cherry-pick the release commit
-          if git cherry-pick $RELEASE_COMMIT; then
-            echo "Successfully cherry-picked release commit to develop"
-            git push origin develop
-          else
-            echo " had conflicts. Attempting to resolve..."
-            
-            # Accept all changes from the release commit
-            git checkout --theirs mix.exs CHANGELOG.md
-            git add mix.exs CHANGELOG.md
-            
-            # Complete the cherry-pick
-            git cherry-pick --continue || true
-            git push origin develop
-          fi
+          git tag -a "$TAG_NAME" -m "Release $TAG_NAME"
+
+          git push origin "$TAG_NAME"

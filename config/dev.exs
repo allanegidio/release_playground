@@ -90,13 +90,3 @@ config :phoenix_live_view,
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
-
-config :git_ops,
-  mix_project: Mix.Project.get!(),
-  changelog_file: nil,
-  repository_url: "https://https://github.com/allanegidio/release_playground",
-  types: [],
-  tags: [],
-  manage_mix_version?: false,
-  manage_readme_version: "README.md",
-  version_tag_prefix: "v"
