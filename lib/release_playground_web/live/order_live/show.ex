@@ -27,6 +27,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Show do
         <:item title="Phone number">{@order.phone_number}</:item>
       </.list>
     </Layouts.app>
+    LLLL
     """
   end
 
