@@ -99,6 +99,7 @@ jobs:
               'bug': '🐛 Bug Fixes',
               'bugfix': '🐛 Bug Fixes',
               'fix': '🐛 Bug Fixes',
+              'hotfix': '🐛 Bug Fixes',
               'documentation': '📚 Documentation',
               'docs': '📚 Documentation',
               'maintenance': '🔧 Maintenance',
@@ -128,14 +129,6 @@ jobs:
                 categories['📦 Other Changes'].push(pr);
               }
             }
-
-            // Generate release notes automatically
-            const autoNotes = await github.rest.repos.generateReleaseNotes({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag_name: tagName,
-              previous_tag_name: previousTag || undefined,
-            });
 
             // Build enhanced release body
             let body = `## What's Changed\n\n`;

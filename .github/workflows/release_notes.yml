@@ -42,22 +42,15 @@ jobs:
             const tagName = context.ref.replace('refs/tags/', '');
             const previousTag = '${{ steps.previous_tag.outputs.previous_tag }}';
 
-            // Generate release notes automatically from PRs
-            const releaseNotesResponse = await github.rest.repos.generateReleaseNotes({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag_name: tagName,
-              previous_tag_name: previousTag || undefined,
-            });
-
             // Create the release with auto-generated notes
             const res = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: tagName,
               name: `Release ${tagName}`,
-              body: releaseNotesResponse.data.body,
+              body: '',
               generate_release_notes: true,
+              previous_tag_name: previousTag || undefined,
             });
             
             core.info(`✅ Created release with auto-generated notes: ${res.data.html_url}`);

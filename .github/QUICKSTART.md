@@ -90,7 +90,7 @@ mv .github/workflows/release_notes.yml .github/workflows/release_notes.yml.disab
 ### 1. Label Your PRs
 Add labels when creating PRs:
 - `feature` = 🚀 New Features
-- `bug` = 🐛 Bug Fixes  
+- `bug` or `hotfix` or `fix` = 🐛 Bug Fixes  
 - `docs` = 📚 Documentation
 - `chore` = 🔧 Maintenance
 

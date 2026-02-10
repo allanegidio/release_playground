@@ -21,6 +21,7 @@ changelog:
         - bug
         - bugfix
         - fix
+        - hotfix
     - title: 📚 Documentation
       labels:
         - documentation

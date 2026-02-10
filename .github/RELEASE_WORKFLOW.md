@@ -49,7 +49,7 @@ To get beautiful categorized release notes, label your PRs:
 | Label | Category | Example |
 |-------|----------|---------|
 | `feature`, `enhancement`, `new` | 🚀 New Features | Add user authentication |
-| `bug`, `bugfix`, `fix` | 🐛 Bug Fixes | Fix login redirect issue |
+| `bug`, `bugfix`, `fix`, `hotfix` | 🐛 Bug Fixes | Fix login redirect issue |
 | `documentation`, `docs` | 📚 Documentation | Update API docs |
 | `maintenance`, `chore`, `refactor` | 🔧 Maintenance | Refactor auth module |
 | `ui`, `ux`, `design` | 🎨 UI/UX Improvements | Redesign dashboard |
