@@ -43,7 +43,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Form do
     order = Orders.get_order!(id)
 
     socket
-    |> assign(:page_title, "Edit Order")
+    |> assign(:page_title, "Edit adasdasd")
     |> assign(:order, order)
     |> assign(:form, to_form(Orders.change_order(order)))
   end
