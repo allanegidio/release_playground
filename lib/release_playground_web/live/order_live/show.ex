@@ -35,6 +35,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Show do
     {:ok,
      socket
      |> assign(:page_title, "Show block me please")
+     |> assign(:feature, "feature flag")
      |> assign(:order, Orders.get_order!(id))}
   end
 end
