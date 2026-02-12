@@ -10,7 +10,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Form do
     <Layouts.app flash={@flash}>
       <.header>
         {@page_title}
-        <:subtitle>Use this form to manage order asd asds a records in your database.</:subtitle>
+        <:subtitle>Use this form to manage order asd assdasdsadsds a records in your database.</:subtitle>
       </.header>
 
       <.form for={@form} id="order-form" phx-change="validate" phx-submit="save">
