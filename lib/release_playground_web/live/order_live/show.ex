@@ -34,7 +34,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Show do
   def mount(%{"id" => id}, _session, socket) do
     {:ok,
      socket
-     |> assign(:page_title, "Show fix")
+     |> assign(:page_title, "Show fixxxxxxx")
      |> assign(:order, Orders.get_order!(id))}
   end
 end
