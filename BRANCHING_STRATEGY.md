@@ -177,10 +177,10 @@ If we are going to merge develop -> main, and we have a untested feature, this f
 ## FAQ
 
 **Q: What if `develop` has untested features when I need to release?**  
-A: No problem. Only merge the tested commits from `develop` to `main`. Untested work stays on `develop` and won't reach production.
+A: No problem. Only hide it with feature with flags.
 
 **Q: Can two hotfixes happen at the same time?**  
-A: Yes. Both can be pushed to the latest `release/*` branch. Each push triggers a production deploy.
+A: Yes. Both can be pushed to the latest `release/*` branch. Each push triggers a production deploy. But do not forget to send it to develop branch as a PR.
 
 **Q: Do we ever deploy `develop` directly to production?**  
 A: Never. `develop` only deploys to staging. Production is exclusively served by `release/*` branches.
@@ -190,3 +190,6 @@ A: They remain as historical snapshots. Only the latest `release/*` branch recei
 
 **Q: What happens if we have a lot of bugs in a release and our clients are mad, everyting is burning?**  
 A: Just redeploy previous stable tag.
+
+**Q: Does the branches main/develop will be protected?**  
+A: Yes, we will use rulesets with only Github App token as bypass.
