@@ -72,7 +72,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Form do
       {:ok, order} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Order updated ")
+         |> put_flash(:info, "Order updated with success")
          |> push_navigate(to: return_path(socket.assigns.return_to, order))}
 
       {:error, %Ecto.Changeset{} = changeset} ->
