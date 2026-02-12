@@ -9,7 +9,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Show do
     <Layouts.app flash={@flash}>
       <.header>
         Order {@order.id}
-        <:subtitle>This is a asdasds record from your databsdasdassas</:subtitle>
+        <:subtitle>This is a asdasds record from your help</:subtitle>
         <:actions>
           <.button navigate={~p"/orders"}>
             <.icon name="hero-arrow-left" />
@@ -35,6 +35,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Show do
     {:ok,
      socket
      |> assign(:page_title, "Show block me please")
+     |> assign(:feature, "feature flag")
      |> assign(:order, Orders.get_order!(id))}
   end
 end
