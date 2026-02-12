@@ -29,6 +29,7 @@ defmodule ReleasePlaygroundWeb.OrderLive.Form do
 
   @impl true
   def mount(params, _session, socket) do
+    dbg "KKK"
     {:ok,
      socket
      |> assign(:return_to, return_to(params["return_to"]))
