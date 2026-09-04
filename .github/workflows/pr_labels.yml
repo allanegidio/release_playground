@@ -1,0 +1,81 @@
+name: PR labels from conventional title
+
+# Auto-labels every PR from its conventional-commit title so the auto-generated
+# release notes (.github/release.yml) land in the right category:
+#   feat -> feature | fix/improvement/hotfix -> fix | docs -> documentation
+#   perf -> performance | test -> test | chore/ci/build/refactor/revert/style -> maintenance
+#   "type!:" or a "BREAKING CHANGE:" line in the body -> breaking-change (listed first)
+#   develop -> main PRs -> release (excluded from the notes: they are the batch, not a change)
+# Title/body reach the script only through env vars, never through ${{ }} in
+# the run block, so PR text cannot inject shell.
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  pull-requests: write
+  issues: write # gh label create
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Compute and apply labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          NUM: ${{ github.event.pull_request.number }}
+          TITLE: ${{ github.event.pull_request.title }}
+          BODY: ${{ github.event.pull_request.body }}
+          HEAD: ${{ github.event.pull_request.head.ref }}
+          BASE: ${{ github.event.pull_request.base.ref }}
+        run: |
+          set -euo pipefail
+
+          type="$(sed -nE 's/^([a-z]+)(\([^)]*\))?!?: .*/\1/p' <<<"${TITLE}")"
+          bang="$(sed -nE 's/^[a-z]+(\([^)]*\))?(!): .*/\2/p' <<<"${TITLE}")"
+
+          want=()
+          if [[ -n "${bang}" ]] || grep -qE '^(\* )?BREAKING[- ]CHANGE: ' <<<"${BODY:-}"; then
+            want+=(breaking-change)
+          fi
+          case "${type}" in
+            feat)                                 want+=(feature) ;;
+            fix|improvement|hotfix)               want+=(fix) ;;
+            docs|doc)                             want+=(documentation) ;;
+            perf)                                 want+=(performance) ;;
+            test)                                 want+=(test) ;;
+            chore|ci|build|refactor|revert|style) want+=(maintenance) ;;
+          esac
+          if [[ "${HEAD}" == "develop" && "${BASE}" == "main" ]]; then
+            want+=(release)
+          fi
+
+          # Labels this workflow owns (created on demand, idempotent).
+          declare -A color=(
+            [breaking-change]=B60205 [feature]=0E8A16 [fix]=D93F0B [documentation]=0075CA
+            [performance]=FBCA04 [test]=BFD4F2 [maintenance]=C5DEF5 [release]=5319E7
+          )
+          for l in "${!color[@]}"; do
+            gh label create "${l}" --repo "${REPO}" --color "${color[$l]}" --force >/dev/null
+          done
+
+          current="$(gh pr view "${NUM}" --repo "${REPO}" --json labels --jq '.labels[].name')"
+          add=(); remove=()
+          for l in "${!color[@]}"; do
+            if printf '%s\n' "${want[@]+"${want[@]}"}" | grep -qx "${l}"; then
+              grep -qx "${l}" <<<"${current}" || add+=("${l}")
+            else
+              grep -qx "${l}" <<<"${current}" && remove+=("${l}") || true
+            fi
+          done
+
+          args=()
+          [[ ${#add[@]} -gt 0 ]]    && args+=(--add-label "$(IFS=,; echo "${add[*]}")")
+          [[ ${#remove[@]} -gt 0 ]] && args+=(--remove-label "$(IFS=,; echo "${remove[*]}")")
+          if [[ ${#args[@]} -gt 0 ]]; then
+            gh pr edit "${NUM}" --repo "${REPO}" "${args[@]}"
+          fi
+          echo "type='${type:-none}' -> labels: ${want[*]:-none}" | tee -a "$GITHUB_STEP_SUMMARY"

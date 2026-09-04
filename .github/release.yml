@@ -4,6 +4,7 @@
 changelog:
   exclude:
     labels:
+      - release
       - ignore-for-release
       - dependencies
       - skip-changelog
@@ -11,6 +12,9 @@ changelog:
       - dependabot
       - github-actions[bot]
   categories:
+    - title: ⚠️ Breaking Changes
+      labels:
+        - breaking-change
     - title: 🚀 New Features
       labels:
         - feature
