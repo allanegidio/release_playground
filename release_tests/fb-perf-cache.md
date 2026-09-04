@@ -1,0 +1,3 @@
+# perf: cache product lookups
+
+2026-09-04T03:20:43Z
